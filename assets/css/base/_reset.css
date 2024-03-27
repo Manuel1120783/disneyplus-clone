@@ -1,0 +1,32 @@
+/* neste Módulo css, vamos resetar/limpar a formatação definida por qualquer browser */
+*,
+/* São os nossos pseudo_elementos "::after" e "::before"*/
+*::after,
+*::before {
+    /* espaçamentos externos do elemento */
+    margin: 0;
+    /* espaçamentos internos do elemento */
+    padding: 0;
+    /* não vou querer que os elementos venham com nenhuma borda definida pelo browser "none" */
+    border: none;
+    /* 
+    Se colocar bordas e paddings nos nossos elementos, não vou querer que a altura e largura aumente de acordo com os paddings e bordas.
+    Vou querer que os tamanhos (altura e largura) fiquem de acordo com o conteúdo inserido ou de acordo com o tamanho que eu definir fixo no elemento
+    Eu não quero que um elemento aumente de acordo com as propriedades css "border" e "padding"
+    Ex:
+    Se não definir aqui a propriedade "box-sizing: border-box;" significa que ao colocar um conteúdo de 140px e se tiver uma margem de largura, por exemplo, definida de 60px, isso iria dar uma largura total ao conteúdo de 200px (140px+60px).
+    Mas ao definir esta propriedade css aqui, vou fazer com que a largura do conteúdo se mantenha inalterada independentemente do valor das propriedades "border" e "padding", fazendo com que estas propriedades se ajustem ao conteúdo independentemente dos valores que tenham.
+    */
+    box-sizing: border-box;
+}
+
+a {
+    /* Como os links por padrão vêm com um sublinhado e não queremos ver esse sublinhado nos links, utilizamos a propriedade css "text-decoration: none;" no seletor "a" referente ao mesmo elemento html para retirar esse sublinhado dos links*/
+    text-decoration: none;
+}
+
+/* Um outro "reset/limpeza" que tambem gosto de fazer é numa lista-não-ordenada utilizar a propriedade css "list-style: none;" para ocultar/limpar os pontinhos que identificam uma lista não ordenada*/
+/* As listas de itens são marcadas com bullets/tiros (tipicamente pequenos círculos pretos). */
+ul {
+    list-style: none;
+}
