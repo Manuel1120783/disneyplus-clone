@@ -1,0 +1,176 @@
+/* vamos agora aqui criar o ficheiro global.css
+O que é o ficheiro global.css?
+É onde se vai fazer as formatações globais do projeto.
+Qual a diferença entre o ficheiro reset.css e o global.css?
+O reset.css serve para resetar algumas configurações do navegador, no global.css vamos fazer algumas estilizações específicas do nosso projeto.o global não é o tipo de ficheiro que pode ser compartilhado para outros projetos porque é específico só para este, enquanto que o ficheiro reset ja se poderia compartilhar com outros projetos.*/
+
+/*vou aplicar em todo o meu "html" um "font-size: 62.5%;".
+Mas porque carga-d'água/Bolufas disse 62.5%?
+Porque vamos utilizar a unidade de medida "REM".
+E o que é o REM?
+O REM é a unidade de medida relativa ao "font-size" do elemento raíz do nosso documento(Document), que é o nosso elemento "<html>".
+Se eu alterar o valor de percentagem na propriedade ""font-size" essa alteração vai interferir diretamente na unidade de medida "REM" do nosso projeto. 
+Um REM é igual a 16px para a maioria dos navegadores. Esses navegadores colocam como medida padrão do font-size do html como 16px.
+Porquê 1rem = 16px?
+Porque o "font-size" do "html" na maioria dos navegadores já é colocada como padrão essa medida de 16px.
+Tem muitas medidas e muitos estilos que já são formatados diretamente no navegador, em que esses navegadores colocam essas formatações, é não é diferente do "font-size" do nosso "html".
+Se eu quiser calcular 32px:
+1rem=16px
+2rem=32px
+Ese quiser calcular 24px?
+1.5rem=24px
+E se eu quiser calcular uns 18px?
+Então vamos ter de fazer uns calculos de forma a a permanecer com o nosso "font-size" de 16px.
+O valo de 62.5% da nossa propriedade css "font-size" refere-se a 62.5% de 16px, que dá 10px.  se o valor fosse de 100% se referia ao nosso valor padrão do "font-size" do "html" que é 16px.
+Logo, estamos a transformar o nosso "fonte-size" do "html" de 16px em 10px.
+Então porquê não colocar diretamente os 10px como valor da propriedade css "font-size"? tipo "font-size: 10px;"?
+Porque no nosso "html" não ficaria uma unidade relativa, e por exemplo, se formos mexer nas configurações no navegador para aumentar ou diminuir fontes, não é no zoom mas sim nas configurações do navegador pra aumentar e diminuir fontes, que serve para quando uma pessoa que tenha uma deficiencia na visão e precise que a fonte seja maior, se eu deixar 10px como valor da propriedade "font-size" do nosso "html", essas configurações do navegador de aumentar e diminuir fonte não irão funcionar.  
+Logo é necessário deixar sempre o valor do nosso "font-size" do "html" em percentagem (%). Logo, coloco 10px como valor da font-size mas em formato de percentagem (62.5%).
+ Para facilitar calculos podemos adotar a forma de passagem de pixels para REM como o seguinte:
+1rem = 16px
+tambem pode ser
+1.6rem = 16px
+3.2rem = 32px
+6.4rem = 64px
+È mais facil de calcular e não estamos no css para estarmos a fazer muitos cálculos*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    /* Vamos aqui aplicar em todo o corpo do projeto a fonte "Roboto" que foi sacada do google-fonts. aplicamos aqui conforme está descrita no site google-fonts */
+    font-family: 'Roboto', sans-serif;
+
+    /*
+º   Já temos um "background" na pasta "imgs" e vamos colocar ele aqui, através do atributo "url"... 
+    (../../) correspondem respetivamente ás pastas (css/assets) e representa retroceder
+    */
+    /** background: url('../../imgs/background.png'); */
+
+    /* 
+    Verificamos na página que o tamanho do background não é do tamanho total da largura do monitor ou tela em que ele se repete na largura várias vezes...
+    Para que ele não se repita constantemente na largura do monitor, vou colocar também como valor do background o atributo "no-repeat"  
+    */
+    /** background: url('../../imgs/background.png') no-repeat; */
+
+    /* 
+    Ok, verificamos agora que o background não se repete mas fica branco no local onde se repetia.
+º   Queremos agora que o background se estique e complete a largura da tela de visualização.
+    Como o background está a ser estilizado no seletor "body", logo se refere ao fundo do conteúdo inteiro 
+    Então para isso vou colocar um "background-size" e como atributo valor vou colocar o "cover". O "cover" vai fazer aquilo que eu quero, ele vai fazer com que o background fique no tamanho inteiro da tela.
+    */
+    /** background-size: cover; */
+
+    /*
+    Só que há um comportamento que eu não quero que aconteça..
+    Os nossos textos/conteúdos da página estão com uma cor preta, logo não é possivel visualizar o conteúdo.
+    para questão de teste vamos colocar uma cor braca..
+    */
+    color: white;
+    /* 
+!   [001] 
+    O conteúdo já está novamente visivel.
+    */
+
+    /*
+!   [003] 
+º   Quero colocar o background fixo de forma que que quando eu rolar a página o background não se movimente.
+    Então o que posso fazer?
+    Posso ir a "_global.css" e no seletor "body" colocar "background-attachment: fixed;"
+    Quando fizer isso ,verifico aqui que o nosso background/fundo não se estica mais, verificamos que se encontra fixo no fundo.
+    Porem temos um problema com isto. Se formos visitar o site do "Can-I-Use" e digitar na barra de pesquisa "background-attachment", verificamos que nos indica que esta propriedade css tem algumas incompatibilidades com alguns navegadores, inclusive no android.
+    Então eu não quero e nem vou utilizar uma propriedade que não funciona corretamente em alguns dispositivos.
+    */
+    /** background-attachment: fixed; */
+
+    /*só para teste*/
+    font-size: 2rem;
+}
+
+/* 
+!   [005]
+Ao especificar aqui a nossa classe "class="background-fixed"" para sua estilização, vou então passar a nossa propriedade background, "background: url('../../imgs/background.png') no-repeat;" e "background-size: cover;", do seletor "body{}" para para o seletor que representa a nossa classe ".background-fixed{}"...
+*/
+
+.background-fixed {
+    background: url('../../imgs/background.png') no-repeat;
+    background-size: cover;
+    /*
+    Voltando á página verifico que ficou tudo branco e sem conteúdo.
+    Porquê?
+    Porque ainda não temos nenhum conteúdo para visualizar dentro da div que contem esta classe.
+    Senão temos nenhum conteúdo nessa div e nem vamos ter, precisamos então de setar (set) uma altura e largura fixa. na verdade é só setar a altura fixa, porque como o display padrão de qualquer div é block "display: block;" então a largura de qualquer div é de 100% como padrão.
+º   Como o display padrão de qualquer div é block "display: block;" então a largura de qualquer div é de 100% como padrão.
+    Mas mesmo assim vamos colocar tanto a altura como a largura desta div, utilizando como unidades no seu valor os "viewport"/"janela-de-visualização"..
+    */
+    height: 100vh;
+    /* width: 100vw; */
+    /* 
+º   O viewport(vh/vw) representa a área em computação gráfica que está a ser visualizada no momento. Em termos de navegador Web, é geralmente o mesmo que a janela do navegador, excluindo a interface do utilizador, a barra de menus, etc. Esta é a parte do documento que está a ser visualizada. 
+    Viewport representa toda a área visivel da tela. Não confundir com a área de todo o conteúdo de uma página.
+    */
+    /* 
+    Verificamos agora na nossa página que primeiramente aparece na tela e na area visivel o nosso background que está agora nesta div, e se rolarmos um pouco para baixo a página vai nos aparecer um pouco da area referente á segunda div. 
+    Para que a div de classe "class= "wrapper"" sobreponha esta div "class= background-fixed", vamos utilizar aqui a propriedade "position: static;". Utilizamos o valor "static" na propriedade css "position" porque normalmente o valor "static" é a posição padrão de todos os elementos html. 
+    */
+    /* position: static; */
+    /* 
+        Verificamos que na nossa página continua tudo igual, não alterou nada, continuando a exibir uma div depois da outra.
+        Se alterarmos para a "position: absolute;", também não vai sobrepor. 
+        Porquê? 
+        Porque se eu mexer na posição "absolute" ou "fixed" vou também ter de mexer na largura "width"
+        */
+    /** position: absolute; */
+    /* 
+    Se colocar o valor de "width" a 100% ou a 100vw vai funcionar da mesma forma, ou seja, o elemento "<div class="background-fixed">", que é a nossa primeira div, vai ocupar a largura 100% da visualização da tela. 
+    */
+    width: 100%;
+    /* 
+    Ao descer na página verificamos que não é esse o comportamento que queremos, pois verificamos que o conteúdo foi sobreposto porem não está fixo. 
+    Queremos que este elemento div representado aqui pelo seletor da sua classe, tenha um comportamento de estar flutuando na tela como o comportamento absolute porem que este permaneça fixo quando rodamos a tela com o rato ou na barra lateral da página.
+    Então o que podemos fazer?
+    Podemos trocar o comportamento de "position: absolute;"  pelo "position: fixed;"
+    */
+    position: fixed;
+    /*
+    Funcionou. Podemos rodar o conteúdo da div "class="wrapper" que está sobreposta por esta div "class=background-fixed"", em que esta div se mantem fixa ao rodar o conteúdo da outra div sobreposta por esta.
+    */
+
+    /* 
+    Queremos agora que o nosso conteúdo sobreposto venha para a frente.
+    Primeira coisa a fazer é utilizar o "z-index" aqui e colocar como valor o "-1"...
+    */
+    /* z-index: -1; */
+    /* 
+    Esta propriedade colocou a nossa a nossa div por trás da div wrapper, isto é, em vez de a sobrepor foi agora sobreposta por ela.
+    Retirando a propriedade "z-index: -1;" volta tudo ao normal.
+    Esta é uma forma de fazer isto. vamos utilizar outra forma... 
+    */
+
+    /* colocando o "position: relative;" na div wrapper abaixo, posso tambem brincar com o "z-index" aqui e na outra div abaixo... */
+    z-index: 1;
+}
+
+/* 
+Vamos mandar o conteúdo para a frente mas especificando e configurando isso no elemento div de classe wrapper...
+*/
+.wrapper {
+    /* ao utilizar aqui a propriedade "position: relative;" verificamos que tem o mesmo comportamento na página  que ao utilizar a propriedade "z-index: -1;" na outra div de classe background-fixed */
+
+    position: relative;
+    /* 
+    E assim, colocando aqui o "position: relative;" posso tambem brincar com o "z-index" aqui e na outra div acima...
+     */
+    /*º Colocando aqui "z-index: 2;" a div wrapper vai ficar na frente , porque aquele elemento que tiver a propriedade "z-index" com o valor mais alto é o elemento que fica na frente */
+    z-index: 2;
+
+    /* 
+    Se tirar daqui o "position: relative;" eu não poderia usar aqui o "z-index" porque esta propriedade não iria ser compativel com a posição padrão das divs, que é "position: static;". 
+    */
+}
+
+/* 
+Estas etapas apenas serviram para demonstrar os conceitos estilização para o objetivo de querermos fazer rolar muito conteúdo  apenas dentro da área de visualização de uma página, na qual essa área de visualização se mantem fixa enquanto rodamos o conteúdo nessa área.
+Com estas propriedades especificadas nestes seletores, chegamos aquilo que queriamos, que era fazer rolar todo o conteúdo do elemento div "wrapper" sobreposto no elemento div fixo "background-fixed"na tela de visualização, sem que o elemento div fixo "background-fixed" se mova.
+A div wrapper rola todo o seu conteúdo dentro da janela de visualização que é a div "background-fixed", que se mantem sempre fixa, apenas roda o conteúdo dentro dela.
+*/

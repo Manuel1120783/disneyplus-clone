@@ -19,16 +19,71 @@
 </head>
 
 <body>
+    <!--
     <h1>O Disney Plus</h1>
     <p>Acesse o nosso site!</p>
-    <!-- aqui vou colocar so para testar os links dos icons conforme estão no site "https://fontawesome.com/icons/house?f=classic&s=solid"...  -->
-    <i class="fa-solid fa-house"></i>
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <i class="fa-solid fa-plus"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-film"></i>
-    <i class="fa-solid fa-tv"></i>
-    <i class="fa-solid fa-ellipsis-vertical"></i>
+    -->
+    <!-- 
+        [002] Vou tirar estas tags de link "<i>" aqui, porque não vou precisar mais deles...-->
+    <!-- aqui vou colocar so para testar os links dos icons conforme estão no site "https://fontawesome.com/icons/house?f=classic&s=solid"...  
+    *<i class="fa-solid fa-house"></i>
+    *<i class="fa-solid fa-magnifying-glass"></i>
+    *<i class="fa-solid fa-plus"></i>
+    *<i class="fa-solid fa-star"></i>
+    *<i class="fa-solid fa-film"></i>
+    *<i class="fa-solid fa-tv"></i>
+    *<i class="fa-solid fa-ellipsis-vertical"></i>
+    -->
+
+    <!-- Vou abrir o site do "Lorem Ipsum" e vou copiar a primeira frase do primeiro parágrafo para criar esse parágrafo aqui no html. Depois vou repetir esse parágrafo inumeras vezes até aparecer uma barra de rolagem no IDE, para verificarmos um comportamento que não convem acontecer...
+    Verificamos que à medida que vamos adicionando parágrafos o nosso background/fundo está-se esticando todo e é o "cover" que faz isso "background-size: cover;". 
+    O fundo/background se estica todo para cobrir todo o fundo do nosso elemento "body", que representa o nosso conteúdo inteiro da página.
+    Mas eu não quero que background faça isso. Eu quero que eu ao rolar a página o meu fundo/background fique fixo num certo tamanho especificado. Por exemplo, o nosso "body" ocupa o nosso conteúdo inteiro pois sabemos que o "body" é o pai de todos os elementos html.
+    *<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    *<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    *<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    * ......
+    Quero colocar o background fixo de forma que que quando eu rolar a página o background não se movimente.
+    Então o que posso fazer?
+    Posso ir a "_global.css" e no seletor "body" colocar "background-attachment: fixed;"
+    Quando fizer isso ,verifico aqui que o nosso background/fundo não se estica mais, verificamos que se encontra fixo no fundo.
+    Porem temos um problema com isto. Se formos visitar o site do "Can-I-Use" e digitar na barra de pesquisa "background-attachment", verificamos que nos indica que esta propriedade css tem algumas incompatibilidades com alguns navegadores, inclusive no android.
+    Então eu não quero e nem vou utilizar uma propriedade que não funciona corretamente em alguns dispositivos.
+    -->
+
+    <!--
+    ![004]    
+    Então qual é a outra opção que temos?
+    Para redimir este problema, vou criar uma "div" aqui com uma "class= wrapper", em que esta classe vai abranger todo o conteúdo do nosso projeto. Depois do "body" esta div vai ser o elemento que vai abranger todo o conteúdo do nosso projeto. 
+    Então vou copiar todo o conteúdo acima para dentro dela.
+    E entre esta div e o body vou criar outra div com uma classe "class="background-fixed"", na qual vou colocar nesta div o nosso background fixo.
+    -->
+
+    <!--
+    ![006]      
+    Estas etapas apenas serviram para demonstrar os conceitos estilização para o objetivo de querermos fazer rolar muito
+        conteúdo apenas dentro da área de visualização de uma página, na qual essa área de visualização se mantem fixa enquanto
+        rodamos o conteúdo nessa área.
+    Com estas propriedades especificadas nestes seletores, chegamos aquilo que queriamos, que era fazer rolar todo o
+        conteúdo do elemento div "wrapper" sobreposto no elemento div fixo "background-fixed"na tela de visualização, sem que o
+        elemento div fixo "background-fixed" se mova.
+    A div wrapper rola todo o seu conteúdo dentro da janela de visualização que é a div "background-fixed", que se mantem
+        sempre fixa, apenas roda o conteúdo dentro dela.
+    -->
+
+    <!--
+    *<div class="background-fixed"></div>
+    *<div class="wrapper">
+    *    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    *    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    *    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    *    ................................................................
+    *</div>
+    -->
+
+    <!--
+    Vou então especificar esta classe "class="background-fixed"" em "_global.css".
+    -->
 
 
 
