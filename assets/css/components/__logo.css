@@ -1,0 +1,67 @@
+/*![003] 
+aqui vamos estilizar o nosso bloco "logo" */
+/* para uma melhor estilização vamos ao "figma" e medimos com alguma precisão os valores em pixels e convertemos depois esses valores para "REM". */
+
+.logo {
+    /* Vou aqui colocar as propriedades padding e margin, porque estas propriedades referem-se sempre ao bloco inteiro e não aos elementos constituintes do bloco
+    Vou então colocar uma margin do lado esquerdo do elemento/tag/caixa  link <a .logo__link> que vai fazer com que haja um afastamento da caixa div bloco "logo" de 38px/3.8rem do lado esquerdo da página */
+    margin-left: 3.8rem;
+    /*Vou utilizar o padding em vez de margin porque quero manter a borda superior da div bloco logo com a borda da página. Então temos um padding-top, ou um espaçamento interno no topo da div bloco "logo" de 13px/1.6rem, o que causa um afastamento de topo ao nosso link nesse valor. */
+    padding-top: 1.6rem;
+}
+
+
+
+.logo__link {
+    height: 4rem;
+    width: 7.5rem;
+    /* Aqui o nosso background/fundo é o icon "logo.svg" */
+    /** background: url('../../imgs/logo.svg'); */
+    /* Mas ao voltar á página não apareceu nada.
+    Porquê não apareceu nada?
+    Porque estamos a trabalhar com uma tag <a> e esta tag tem como seu display padrão "display: inline;", e com o display inline não conseguimos manipular nem a altura nem a largura.
+    Então vamos mudar o display para inline-block para poder manipular a largura e altura. */
+    display: inline-block;
+    /* Verificamos que ficou com dois displays na página, quase que a repetir o segundo display.
+    Para corrigir isso vamos utilizar como valor o atributo "no-repeat" na propriedade "background"... */
+    background: url('../../imgs/logo.svg') no-repeat;
+    /* Mas ao dar um "inspecionar" na nossa página verifico que o tamanho do nosso logotipo/imagem/background está menor que tamanho da div/tag/caixa <a>.
+Eu quero que o logotipo/imagem/background fique praticamente com o tamanho da div/tag/caixa <a>, ou seja, 75w/40h.
+Então o que preciso fazer?
+A primeira coisa que vou fazer é posicionar o nosso background ao centro.  */
+    background-position: center;
+    /* Agora vou aumentar o tamanho do background para 100% do tamanho da div/tag/caixa <a>*/
+    /** background-size: 100%; */
+    /* Já temos um background bem maior que pegou quase 100% da div/tag/caixa <a>, mas o icon/imagem/background ainda não está a 100% do tamanho da  div/tag/caixa <a> */
+    /* Então vamos mexer um pouco mais no background-size do inspecionar da página para melhor ajustar o icon/imagem/background à caixa/div/tag <a>, de forma a esta preencher por completo todo o espaço desta caixa.
+        Quando o ajustamento estiver de acordo com que que pretendemos, pegamos esse ajustamento do background-size do "inspecionar" da página e trocamos pelo valor do nosso background-size aqui especificado... */
+    background-size: 105%;
+    /* Se nas laterais ainda não estiver bem ajustado, ne for insignificante, isso não vai atrapalhar*/
+
+    /* Verificar no Figma quanto de margem e padding vai ter a nossa caixa tag <a>, que é o nosso link, tanto do lado esquerdo da pagina como do topo.
+    Deu 38px do lado esquerdo  */
+}
+
+/* Agora vou ao figma e vou ver como está o nosso logotipo na tela de telemovel.
+verificamos as medias de largura e altura e temos 59px/32px, com uma margin/padding de topo de 20px e lateral esquerda de 22px 
+Como estes comportamentos foram recolhidos de outro tipo de tamanho de tela(telemovel), vamos então trabalhar com @media query para que possamos ajustar os nossos elementos de acordo com o tamanho da tela..
+"@media screen" porque eu estou falando do tipo de tela. "screen" que dizer ecrã/tela/monitor/visor/etc. "(max-width)" quer dizer o tamanho máximo que que eu quero que a nossa tela/resolução tenha para que as regras dentro desta "@media query" possam ser válidas neste tamanho de tela.
+"(max-width: 1024px)" Vou precisar então aqui que a nossa resolução de largura esteja no máximo em 1024px para que as regras dentro possam ser válidas.
+Vou utilizar esta medida como padrão porque é uma medida que dá para trabalhar durante o projeto.... */
+
+@media screen and (max-width: 1024px) {
+
+    /* Se eu tiver no máximo 1024px de resolução de tela, então eu posso colocar as mesmas propriedades acima só com novas medidas...*/
+    .logo {
+        margin-left: 2.2rem;
+        scroll-padding-top: 2rem;
+    }
+
+    .logo__link {
+        height: 3.2rem;
+        width: 5.9rem;
+    }
+
+    /* vou verificar a pagina com "inspecionar" mas no modo "mobile" e não no modo "desktop"
+    Verificamos que já houve uma pequena alteração na tela mobile*/
+}

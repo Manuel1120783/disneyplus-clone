@@ -1,18 +1,5 @@
-/*!
- * Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com
- * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- * Copyright 2023 Fonticons, Inc.
- */
-
-/* Poderia importar para aqui a outra opção de importar fonts diretamente do google-fonts.
-basta apenas ir ao google-fonts escolher a fonte desejada e em vez do download clicar no icon ao lado e assinalar a opção "@import", depois é só copiar apenas o @import que la está e copiar aqui, conforme abaixo...
-Mas como ela tambem é uma fonte, vou importar ela para este ficheiro de fontes... */
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/*
-  Temos algumas configurações básicas aqui..
-*/
 :root, :host {
   --fa-style-family-classic: 'Font Awesome 6 Free';
   --fa-font-solid: normal 900 1em/1 'Font Awesome 6 Free';
@@ -23,41 +10,20 @@ Mas como ela tambem é uma fonte, vou importar ela para este ficheiro de fontes.
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  /*
-  Podemos ver aqui no "@font-face" que ele está linkando este ficheiro aqui com as fontes em pastas que não temos no nosso projeto (src: url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.ttf") format("truetype");).
-  º  src: url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.ttf") format("truetype");
-  Aqui ele está a procurar na pasta "css", porque anda para trás um(../) repositório/pasta que representa a pasta "css",isto é, volta para trás da pasta "base" onde se localiza o nosso ficheiro para a pasta "css" que supostamente estaria a pasta "webfonts", "../webfonts/", pela pasta "webfonts" que não existe dentro da pasta "css".
-  Mas nós queremos que o nosso ficheiro "fontes" estabeleça ligação com a nossa pasta "fontes" que se encontra dentro da pasta "assets", logo tem que andar duas pastas/diretórios para trás, (../../), que representam sucessivamente as pastas (css/assets) e de seguida ir para a nossa pasta "fonts" (../../fonts), e lá localizar a nossa fonte pretendida, ("../../fonts/fa-solid-900.woff2").
-  */
   src: url("../../fonts/fa-solid-900.woff2") format("woff2"), url("../../fonts/fa-solid-900.ttf") format("truetype");
 }
 
 .fas,
 .fa-solid {
-  /*Aplicamos aqui a família da fonte que vai referir a fonte na qual os icons foram retirados/resgatados
-  Será igual à propriedade "font-family" do seletor de link(@) "@font-face", que foi obtido na pasta descarregada em "C:\Users\Pc\Documents\FONTES\ÍCONS\fontawesome-free-6.5.1-web\css", para que os icons apareçam na página do browser sem desconfigurações e de forma clara*/
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
-  /*esta propriedade melhora a visualização*/
   font-style: normal;
 }
 
-/*
-Agora precisamos configurar as fontes que vamos utilizar no nosso projeto...
-Podemos verificar que no ficheiro de fontes "all.css" descarregado do site "font_Awesome" que contem as configurações de todas as fontes, podemos ver nele que todos os nomes dos icons estão todos configurados com um código diferente em cada um.
-Então eu vou ver ao "Figma" quais são os icons que vamos precisar no nosso esquema disney plus...
-São 6 icons mais o icon do Menu de ellipsis na vertical (três pontinhos na vertical).
-Depois voltamos ao site "https://fontawesome.com/icons/house?f=classic&s=solid" e extraímos o nome do icon que queremos.
-Vamos ao ficheiro all.css e na barra de pesquisa colocamos o nome do icon "fa-house:". quando aparecer a descrição do nosso icon vamos copiar e colar aqui neste ficheiro, conforme está abaixo... 
-vamos repetir este processo para todos os restantes icons
-*/
 .fa-house::before {
   content: "\f015";
 }
 
-/*
-vamos repetir este processo para todos os restantes icons...
-*/
 .fa-magnifying-glass::before {
   content: "\f002";
 }

@@ -4,9 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Vamos agora utilizar fonts do google-fonts. para isso vamos ao site, na barra de pesquisa colocamos o nome da fonte desejada pra a procurar e, em seguida selecionamos alguma das famílias dessa fonte que queremos na janela que diz "+ Select this style".
-         De seguida, clico no link ao lado do download e vou importar essas famílias de fontes selecionadas diretamente a partir do google-fonts.
-         Marco a condição "<link>" e copio diretamente as tags html abaixo e colo no meu index -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,78 +11,52 @@
         rel="stylesheet">
     <title>Disney Plus</title>
     <link rel="stylesheet" href="/assets/css/style.css">
-    <!-- "rel" é o atributo de tipo de relacionamento. Quero dizer que tipo de relacionamento vai ter o ficheiro "style.css" com este ficheiro "index.html", que vai ser do tipo folha-de-estilo "stylesheet".-->
-
 </head>
 
 <body>
-    <!--
-    <h1>O Disney Plus</h1>
-    <p>Acesse o nosso site!</p>
-    -->
     <!-- 
-        [002] Vou tirar estas tags de link "<i>" aqui, porque não vou precisar mais deles...-->
-    <!-- aqui vou colocar so para testar os links dos icons conforme estão no site "https://fontawesome.com/icons/house?f=classic&s=solid"...  
-    *<i class="fa-solid fa-house"></i>
-    *<i class="fa-solid fa-magnifying-glass"></i>
-    *<i class="fa-solid fa-plus"></i>
-    *<i class="fa-solid fa-star"></i>
-    *<i class="fa-solid fa-film"></i>
-    *<i class="fa-solid fa-tv"></i>
-    *<i class="fa-solid fa-ellipsis-vertical"></i>
-    -->
+        ![001]
+        Chegou a hora do criar o nosso cabeçalho.
+        A primeira coisa a fazer é ir ao nosso "FIGMA"  e verificar tudo aquilo que precisamos criar aqui no nosso projeto..
+        Temos o "logo" o "menu de navegação" e temos também o "Menu de usuário"
+    Como nomear as minhas classes? Que nome utilizar?
+    Há vários padrões a adotar.
+    Um padrão que foi sugerido é a metodologia que se chama "bem". vamos visitar a sua página em "https://getbem.com/introduction/".
+    º O "BEM" é uma das formas de nomearmos as nossas classes.
+O que seriam os "BLOCOS"?
+BLOCOS seriam componentes da nossa página que se podem repetir noutros lugares.
+por exemplo: O "logo", o "input", os "Menus" o "button", podem ser considerados blocos.
+O INPUT é um bloco porque pode-se repetir em outros lugares da página e do projeto.
+OS ELEMENTOS fazem parte de um bloco. São as tags que constitui um certo bloco. 
+O que seria então um modificador?
+O modificador seria uma espécie de modificador específico e individual num certo bloco.
+Por exemplo: temos vários botões na nossa página que são todos constituidos pela mesma classe, mas são diferenciados por certos atributos que modificam o seu comportamento.
+Neste projeto , vamos usar apenas um nome para cada bloco mais/menos o mais querente possivel com o seu contexto no projeto.
+Para os elementos que compõem cada bloco utilizamos como nomes o nome do bloco seguido por 2 underlines seguido do nome mais específico possível para descrever um certo elemento e contextualiza-lo com a sua funcionalidade no projeto.O elemento aqui sugerido não tem nada a ver com o elemento html de uma tag mas sim o elemento que constituinte de um bloco que descreve uma certa funcionalidade desse bloco dentro de um projeto. 
+Para um modificador, vamos nomear um modificador específico para um certo bloco, logo será formado pelo nome do bloco seguido por dois underlines seguido depois pelo nome de identificador. 
+º Um bloco faz parte de um contexto inteiro.
+A primeira coisa que vou criar é um elemento header, dentro da div "wrapper"...
+-->
 
-    <!-- Vou abrir o site do "Lorem Ipsum" e vou copiar a primeira frase do primeiro parágrafo para criar esse parágrafo aqui no html. Depois vou repetir esse parágrafo inumeras vezes até aparecer uma barra de rolagem no IDE, para verificarmos um comportamento que não convem acontecer...
-    Verificamos que à medida que vamos adicionando parágrafos o nosso background/fundo está-se esticando todo e é o "cover" que faz isso "background-size: cover;". 
-    O fundo/background se estica todo para cobrir todo o fundo do nosso elemento "body", que representa o nosso conteúdo inteiro da página.
-    Mas eu não quero que background faça isso. Eu quero que eu ao rolar a página o meu fundo/background fique fixo num certo tamanho especificado. Por exemplo, o nosso "body" ocupa o nosso conteúdo inteiro pois sabemos que o "body" é o pai de todos os elementos html.
-    *<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    *<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    *<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    * ......
-    Quero colocar o background fixo de forma que que quando eu rolar a página o background não se movimente.
-    Então o que posso fazer?
-    Posso ir a "_global.css" e no seletor "body" colocar "background-attachment: fixed;"
-    Quando fizer isso ,verifico aqui que o nosso background/fundo não se estica mais, verificamos que se encontra fixo no fundo.
-    Porem temos um problema com isto. Se formos visitar o site do "Can-I-Use" e digitar na barra de pesquisa "background-attachment", verificamos que nos indica que esta propriedade css tem algumas incompatibilidades com alguns navegadores, inclusive no android.
-    Então eu não quero e nem vou utilizar uma propriedade que não funciona corretamente em alguns dispositivos.
-    -->
-
-    <!--
-    ![004]    
-    Então qual é a outra opção que temos?
-    Para redimir este problema, vou criar uma "div" aqui com uma "class= wrapper", em que esta classe vai abranger todo o conteúdo do nosso projeto. Depois do "body" esta div vai ser o elemento que vai abranger todo o conteúdo do nosso projeto. 
-    Então vou copiar todo o conteúdo acima para dentro dela.
-    E entre esta div e o body vou criar outra div com uma classe "class="background-fixed"", na qual vou colocar nesta div o nosso background fixo.
-    -->
-
-    <!--
-    ![006]      
-    Estas etapas apenas serviram para demonstrar os conceitos estilização para o objetivo de querermos fazer rolar muito
-        conteúdo apenas dentro da área de visualização de uma página, na qual essa área de visualização se mantem fixa enquanto
-        rodamos o conteúdo nessa área.
-    Com estas propriedades especificadas nestes seletores, chegamos aquilo que queriamos, que era fazer rolar todo o
-        conteúdo do elemento div "wrapper" sobreposto no elemento div fixo "background-fixed"na tela de visualização, sem que o
-        elemento div fixo "background-fixed" se mova.
-    A div wrapper rola todo o seu conteúdo dentro da janela de visualização que é a div "background-fixed", que se mantem
-        sempre fixa, apenas roda o conteúdo dentro dela.
-    -->
-
-    <!--
-    *<div class="background-fixed"></div>
-    *<div class="wrapper">
-    *    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    *    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    *    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    *    ................................................................
-    *</div>
-    -->
-
-    <!--
-    Vou então especificar esta classe "class="background-fixed"" em "_global.css".
-    -->
+    <div class="background-fixed"></div>
+    <div class="wrapper">
+        <header class="header">
+            <!-- Como vimos no "FIGMA"  o primeiro bloco a criar aqui é o "logo", Ele vai ser um bloco específico porque ele vai poder se repetir na mesma página, podendo desta forma ser comparado a um componente...
+            -->
+            <!-- O "logo" é o nome do bloco -->
+            <div class="logo">
+                <!--º Não vou colocar o "logo" numa tag "<img>" mas sim numa tag "<a>". Porquê? Porque é uma boa prática. Toda aquela imagem que não for uma imagem de conteúdo, que é uma imagem somente ilustrativa, é uma boa prática colocar essa imagem como um "background" utilizando uma tag "<a>"  e não como imagem de conteúdo mesmo em que se utiliza uma tag "<img>".
+                 -->
+                <!-- O "logo__link" é o nome do elemento do bloco. o "link" é o elemento que faz parte do bloco. -->
+                <!-- Aqui vamos colocar o nosso background do "logo". porque geralmente o nosso logo é clicavel, então tem que ficar na teg <a> que é a tag de link -->
+                <!-- No atributo "href" não vou colocar nenhum endereço porque só vamos trabalhar com esta pagina e não vai ter mais paginas para endereçar. então fica "href="/"""-->
+                <!--![002] 
+                    Vou criar uma pasta dentro da pasta css chamada "componentes" para trabalhar com o "logo". Lá vão ficar os componentes que vão ser os blocos do nosso projeto e que se irão repetir noutros lugares da página. -->
+                <a href="/" class="logo__link" name="home"></a>
 
 
+        </header>
+    </div>
 
 </body>
 
