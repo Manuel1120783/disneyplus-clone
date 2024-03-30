@@ -12,6 +12,10 @@
     <title>Disney Plus</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
+<!--! [001] -->
+<!--Vamos desenvolver agora o nosso nav menu só que agora para o modo mobile ou parte responsive -->
+<!-- Vamos ao figma verificar as diferenças que existem entre o modo desktop e o modo mobile  -->
+<!--Em modo mobile apenas temos os 3 primeiros icons e sem a parte do texto. então vamos começar por isso...  -->
 
 <body>
     <div class="background-fixed"></div>
@@ -63,6 +67,38 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                             <span class="nav-menu__text"></span>
                         </a>
+                        <!--
+                        ! [003]                     
+                        Vamos fazer agora o menu dropdown. Começamos por tirar as medidas desse menu no figma.
+                        Verificamos que os 3 últimos icons que não aparecem na tela mobile, vão aparecer neste menu dropdown, então vamos duplicar esse menu no html...
+                        Vou criar um sub-menu específico para o modo mobile.. */
+                        Vou criar aqui uma lista não ordenada dentro do meu link dropdown que vou chamar de nav-submenu, e vou colar aqui os 3 últimos itens  dos icons que não aparecem em modo mobile. O "nav-submenu" tambem vai ser um bloco.
+                        -->
+                        <ul class="nav-submenu">
+                            <li class="nav-submenu__item mobile-hidden">
+                                <a href="/" class="nav-submenu__link">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span class="nav-submenu__text">Originais</span>
+                                </a>
+                            </li>
+                            <li class="nav-submenu__item mobile-hidden">
+                                <a href="/" class="nav-submenu__link">
+                                    <i class="fa-solid fa-film"></i>
+                                    <span class="nav-submenu__text">Filmes</span>
+                                </a>
+                            </li>
+                            <li class="nav-submenu__item mobile-hidden">
+                                <a href="/" class="nav-submenu__link">
+                                    <i class="fa-solid fa-tv"></i>
+                                    <span class="nav-submenu__text">Séries</span>
+                                </a>
+                            </li>
+                        </ul>
+<!-- 
+    Verificamos na página que os icons ficaram agora alinhados com a parte inferior do dropdown, uma vez que este agora ficou com mais espaço de caixa porque recebeu estes itens de submenu.
+    Como por padrão o bloco <ul> tem um display inline, logo os itens ficam organizados e dispostos na vertical como aparecem na tela.
+    Então eu posso ir ao ficheiro "__nav-menu.css" e no seletor ".nav-menu__item{}" posso colocar a propriedade "vertical-align: top;". Fazendo isso os icons voltam a ficar todos alinhados com o icon do dropdown, e o comportamento é esperado...
+ -->
                     </li>
                 </ul>
             </nav>
