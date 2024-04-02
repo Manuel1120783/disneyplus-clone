@@ -1,13 +1,4 @@
-/* 
-!  [009]
-Vou colocar esta "@keyframes showFade {}" criada aqui noutro local, por questão de organização de projeto.
-Na pasta "base" vou criar lá um ficheiro de nome "_animations.css" e vou guardar la esta "@keyframes showFade {}"
-*/
-
-/* Precisamos agora que o efeito no submenu mobile fique mais suave. Para isso , vamos usar um "@keyframes" e como identificador vou usar um "showFade", que é o nome do efeito que eu vou usar, não só para este elemento mas vou poder usar também para outros elementos... */
 @keyframes showFade {
-
-    /* quando esse efeito estiver com 0%, eu posso colocar uma opacidade de 0. E quando esse efeito estiver a 100%, eu posso colocar uma opacidade de 1...*/
     0% {
         opacity: 0;
     }
@@ -15,6 +6,16 @@ Na pasta "base" vou criar lá um ficheiro de nome "_animations.css" e vou guarda
     100% {
         opacity: 1;
     }
+}
 
-    /* Fazendo isso, vou voltar no meu submenu <ul class="nav-submenu"> e colocar a propriedade "animation: showFade .5s;" */
+@keyFrames slideDown {
+    0% {
+        opacity: .5%;
+        height: 0;
+    }
+
+    100% {
+        opacity: 1;
+        height: 100%;
+    }
 }

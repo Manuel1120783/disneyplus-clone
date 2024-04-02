@@ -1,300 +1,95 @@
-/* cada ficheiro dentro desta pasta "layout" representa um bloco, por razões apenas de organização do código  */
-.nav-menu__item {
-    display: inline;
-    /*
-    ! [004] 
-    Verificamos na página que os icons ficaram agora alinhados com a parte inferior do dropdown, uma vez que este agora ficou com mais espaço de caixa porque recebeu estes itens de submenu.
-    Como por padrão o bloco <ul> tem um display inline, logo os itens ficam organizados e dispostos na vertical como aparecem na tela.
-    Então eu posso ir ao ficheiro "__nav-menu.css" e no seletor ".nav-menu__item{}" posso colocar a propriedade "vertical-align: top;". Fazendo isso os icons voltam a ficar todos alinhados com o icon do dropdown, e o comportamento é esperado...
-    */
-    vertical-align: top;
-}
-
-/*
-* .nav-menu__link {
-*    color: #fff;
-*    font-size: 1.3rem;
-*    text-transform: uppercase;
-*    padding: 3.0rem 2.0rem;
-*    display: inline-block;
-*    letter-spacing: 0.1rem;
-* }
-*/
 .nav-menu {
     margin-left: 3.7rem;
 }
 
-.nav-menu__item.dropdown {
-    display: none;
+.nav-menu__item {
+    display: inline;
+    vertical-align: top;
 }
 
-/*
-*.nav-menu__text::before {
-*    content: "";
-*    height: .2rem;
-    /** width: 100%; 
-*    width: 0;
-*    background: #fff;
-*    position: absolute;
-    /** bottom: 0; 
-*    bottom: -1rem;
-*    transition: width .2s;
-*}
-*/
+.nav-submenu__link,
+.nav-menu__link {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.nav-menu__link {
+    padding: 3rem 2rem;
+}
+
+.nav-submenu__link {
+    padding: 1.6rem 2.0rem;
+}
 
 .nav-menu__text {
     margin-left: 1.1rem;
     position: relative;
 }
 
-/** .nav-menu__link:hover {}*/
-/*
-*.nav-menu__link:hover .nav-menu__text::before {
-*    width: 100%;
-*}
-*/
-
-
-/*! [002] */
-/* Vamos criar aqui uma "@media query" que vai operar em telas até uma resolução máxima de largura de tela de 1024px*/
-@media screen and (max-width: 1024px) {
-
-    /*
-    A primeira coisa a fazer em modo mobile aqui, é fazer os textos desaparecer. *
-    * .nav-menu__text {
-    *    display: none;
-        /*Como podemos acompanhar no inspector do nosso browser, vemos que em modo mobile o texto foi ocultado.  
-    * }
-    */
-
-    /* Como queremos apenas que os 3 primeiros icons e o dropdown apareçam na tela modo mobile vamos fazer desaparecer os outros...*/
-    .nav-menu__text, .nav-menu__item.mobile-hidden {
-        display: none;
-    }
-
-    /* Agora preciso de visualizar o icon dropdown */
-    .nav-menu__item.dropdown {
-        display: inline-block;
-    }
-
-    /* Vamos verificar o tamanho da altura dos icons no figma. */
-    .nav-menu__link {
-        /* verificamos que a altura do icon é de 16px, então vamos ter um font-size de 1.6rem */
-        font-size: 1.6rem;
-
-        /* Vamos medir o distanciamento dos  icons no figma.
-        Temos um espaçamento de 32px entre os icons. mas como em modo desktop tinhamos colocado um padding de 20px de cada lado ods icons, o que traduz num espaçamento de 40px, vamos tambem aqui colocar um padding de cada lado ods icons de metade do valor do seu espaçamento total, ou seja, 32px/2= 16px.*/
-        /** padding: 0 1.6rem; */
-        /* vamos ver tambem o distanciamento tanto do topo/cima como da parte de baixo do icon. 
-        Temos 28px de distanciamento dos icons em relação ao topo(em relação à borda superior da caixa da tag<nav>), e de 38px de distanciamento em relação ao fundo(em relação à borda inferior da caixa da tag<nav>.)*/
-        /* Temos 28px de top e 38px de bottom. vou fazer o seguinte, vou colocar uma padding de 28px tanto em cima como em baixo e vou colocar um padding-bottom de 10px na caixa da tag <ul> para completar o distanciamento de baixo */
-        /* Esta área vai ser a área clicavel do link */
-        padding: 2.8rem 1.6rem;
-        /* margin-bottom: 1rem; */
-    }
-
-    .nav-menu {
-        /* Temos 28px de top e 38px de bottom. vou fazer o seguinte, vou colocar uma padding de 28px tanto em cima como em baixo e vou colocar um padding-bottom de 10px na caixa da tag <ul> para completar o distanciamento de baixo */
-        padding-bottom: 1rem;
-
-        /* Precisamos de ver agora o distanciamento entre a borda lateral direita da caixa da tag <div class="logo"> e da borda lateral esquerda da caixa da tag <i class="fa-house">.
-           Como ja tenho um padding de 16px do lado esquerdo que faz parte da zona clicavel da Tag link <a class="nav-menu__link">, então eu só começo a medir depois desses 16px, ou seja, o meu distanciamento vai ser medido  entre a borda lateral direita da caixa da tag <div class="logo"> e da borda lateral esquerda da caixa da tag <a class="nav-menu__link">*/
-        /* Temos então um distanciamento de 25px, então vamos dar um espaçamento exterior do lado esquerdo(margin-left) da caixa da tag <ul class"nav-menu">, a qual ficará deslocada da borda lateral da sua caixa pai que é a tag<nav class="header__navigation"> e em simultaneo e com praticamente o mesmo distanciamento da caixa da tag <div class="logo"> */
-        margin-left: 2.5rem;
-
-    }
-
-    /* Vamos fazer agora o menu dropdown. Começamos por tirar as medidas desse menu no figma.
-    Verificamos que os 3 últimos icons que não aparecem na tela mobile, vão aparecer neste menu dropdown, então vamos duplicar esse menu no html...
-    Vou criar um sub-menu específico para o modo mobile no index.html.. */
-
-}
-
-/* 
-!  [005]
-Vou voltar ao figma para verificar caracteristicas em comum entre os itens do modo desktop e o modo mobile.
-Verificamos que têm caracteristicas identicas, logo as mesmas classes dos items/elementos do bloco "nav-menu" são identicas às classes dos items/elementos do bloco "nav-submenu".A unica diferença está no prefixo "sub" do nome do bloco "nav-submenu".
-Sendo assim, vamos utiliZar a metodologia "BEM" aqui e vamos adicionar a classe ".nav-submenu__link" ao nosso seletor correspondente à classe "nav-menu__link"...
-*/
-.nav-menu__link, .nav-submenu__link {
-    color: #fff;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    /*  
-    já verificamos as caracteristicas na página mobile, porem verificamos que o padding em nav-menu é maior que no nav-submenu.
-    Temos os espaçamento entre os itens de 32px em altura em modo mobile visto no figma. Então posso colocar na tag <a class="nav-submenu__link"> um padding de 16px top_bottom, que vai dar o espaçamento total entre itens de 32px.
-    Vou manter o padding  nas tags <a class="nav-menu__link"> de " padding: 3.0rem 2.0rem;"
-    */
-    /** padding: 3.0rem 2.0rem; */
-    display: inline-block;
-    letter-spacing: 0.1rem;
-}
-
-.nav-menu__link {
-    /*  
-    já verificamos as caracteristicas na página mobile, porem verificamos que o padding em nav-menu é maior que no nav-submenu.
-    Temos os espaçamento entre os itens de 32px em altura em modo mobile visto no figma. Então posso colocar na tag <a class="nav-submenu__link"> um padding de 16px top_bottom, que vai dar o espaçamento total entre itens de 32px.
-    Vou manter o padding  nas tags <a class="nav-menu__link"> de " padding: 3.0rem 2.0rem;"
-    */
-    padding: 3.0rem 2.0rem;
-}
-
-
-.nav-submenu__link {
-    /*  
-    já verificamos as caracteristicas na página mobile, porem verificamos que o padding em nav-menu é maior que no nav-submenu.
-    Temos os espaçamento entre os itens de 32px em altura em modo mobile visto no figma. Então posso colocar na tag <a class="nav-submenu__link"> um padding de 16px top_bottom, que vai dar o espaçamento total entre itens de 32px.
-    Vou manter o padding  nas tags <a class="nav-menu__link"> de " padding: 3.0rem 2.0rem;".
-    E Vou dar um  padding de 1.6rem top_bottom nas tags <a class="nav-submenu__link">.
-    */
-    /*Mas se ficasse assim vai se criar um espaçamento interno na tag <a class="nav-submenu__link"> em relação aos itens no seu interior de 1.6rem em todos os lados, e isso não queremos*/
-    /** padding: 1.6rem; */
-    /* Medindo agora o espaçamento na horizontal dos itens, isto é, o espaçamento que vai desde a lateral esquerda da caixa da tag <a class="nav-submenu__link"> sem padding, até à borda esquerda da sua caixa pai que é a tag <li class="nav-submenu__item">.
-    Essa distancia é de 20px.*/
-    padding: 1.6rem 2rem;
-    /* 
-    Verificamos que as distancias de cima e de baixo dos itens <li class="nav-submenu__item"> em relação ao bloco <ul class="nav-submenu"> é de 20px tambem...
-    O que significa que vou ter que 1.6rem de padding de link para 2rem de espaçamento tanto da borda superior como da borda inferior da tag <ul class="nav-submenu"> em relação aos itens.
-    Então sobra ainda 0.4rem para completar os 2rem de espaçamento.
-    Vou colocar esses 0.4rem num padding top_bottom na tag <ul class="nav-submenu">.
-    */
-
-}
-
-.nav-submenu {
-    /* 
-    Verificamos que as distancias de cima e de baixo dos itens <li class="nav-submenu__item"> em relação ao bloco <ul class="nav-submenu"> é de 20px tambem...
-    O que significa que vou ter que 1.6rem de padding de link para 2rem de espaçamento tanto da borda superior como da borda inferior da tag <ul class="nav-submenu"> em relação aos itens.
-    Então sobra ainda 0.4rem para completar os 2rem de espaçamento.
-    Vou colocar esses 0.4rem num padding top_bottom na tag <ul class="nav-submenu">.
-    */
-    padding: 0.4rem 0;
-
-    /* 
-    Vou colocar agora um fundo com uma borda na caixa da tag <ul class="nav-submenu"> 
-    Para isso, vou ao figma e vou verificar qual a referencia da cor que tem no print da página referente ao fundo do submenu...
-    Verificamos que a cor de fundo é #141414 e a borda é de 1px e a cor é #393939 .
-    */
-    background: #141414;
-    border: 0.1rem solid #393939;
-    /* Vou colocar um arredondamento nos cantos do meu submenu... */
-    border-radius: 0.5rem;
-
-    /* vamos medir agora o espaçamento do icon ate ao texto...
-    verifico no figma um espaçamento de 12px... */
-    /* Vou colocar num novo seletor referente à classe da tag <span class="nav-submenu__text"> com a propriedade de "margin-left: 1.2rem;", na qual a caixa do texto vai se afastar da caixa do icon 12px. */
-
-    /* Vou querer subir a caixa do submenu mais para cima...
-    Vou colocar uma posição relativa no meu submenu porque assim tanto da para mexer para cima com ele como para baixo, ou seja, estando em posição relativas significa que posso usar nele as propriedades "top" e "bottom". */
-    position: relative;
-
-    /* Como quero que o menu se mova para cima vou utilizar a propriedade css "top"
-    Como verifiquei no inspector do browser, ao colocar um top de -20px verifiquei que seria a posição ideal para quando abrir o menu a clicar no icon de dropdown.. */
-    top: -2rem;
-
-    /* 
-    !  [007]
-    Vamos agora aplicar o efeito hover também no nosso dropdown 
-    começamos então por aplicar um display none na tag do submenu <ul class="nav-submenu">... 
-    */
-    display: none;
-
-    /*
-    !  [008] 
-    Fazendo isso, vou voltar aqui ao meu submenu <ul class="nav-submenu"> e colocar a propriedade "animation: showFade .5s;" 
-    Vou também colocar um tempo de animação de 5 segundos...
-    */
-    animation: showFade .5s;
-
-}
-
-/*
-* .nav-submenu__text {
-    /* Vamos medir agora o espaçamento do icon ate ao texto...
-    Verifico no figma um espaçamento de 12px... 
-/* Vou colocar num novo seletor referente à classe da tag <span class="nav-submenu__text"> com a propriedade de "margin-left: 1.2rem;", na qual a caixa do texto vai se afastar da caixa do icon 12px. 
-* margin-left: 1.2rem;
-* }
-*/
-
-/* 
-Quero fazer agora o efeito do "hover" tambem no modo mobile
-Tambem vou querer fazer futuramente o efeito "touch screen", mas vai ficar mais para a frente e será feito com o javascript.
-Quero que o submenu abra apenas ao detetar o rato/cursor em cima do icon dropdown sem ter que clicar nele..
-Quero também que o efeito criado com o pseudo_elemento ".nav-menu__text::before" seja tambem exibido aqui no meu submenu, que aparece ou desaparece quando o cursor/rato passa por cima do link.
-Vou continuar então a utilizar a metodologia "BEM" para continuar a aproveitar a estrutura de código ja feita do nosso pseudo_elemento "::before" e adicionar ele à classe nav-submenu e ficar desta forma com as mesmas propriedades.
-*/
 .nav-submenu__text::before,
 .nav-menu__text::before {
-    content: "";
-    height: .2rem;
-    /** width: 100%; */
-    width: 0;
     background: #fff;
-    /*
-    Então o pseudo elemento ".nav-menu__text::before" está com "position: absolute;" relativo a quê?
-    Ele está com uma posição absoluta, relativo ao elemento ".nav-submenu__text", logo vou colocar um "position: relative;" nesse elemento ".nav-submenu__text" ...
-    */
-    position: absolute;
-    /** bottom: 0; */
-    /*Vamos reduzir ao espaçamento entre o efeito abaixo do texto e o texto, para que o efeito fique um pouco mais grudado/junto ao texto...*/
-    /* bottom: -1rem; */
     bottom: -.8rem;
+    content: '';
+    height: .2rem;
+    position: absolute;
     transition: width .2s;
+    width: 0;
 }
 
-/* 
-Quero fazer agora o efeito do "hover" tambem no modo mobile
-Tambem vou querer fazer futuramente o efeito "touch screen", mas vai ficar mais para a frente e será feito com o javascript.
-Quero que o submenu abra apenas ao detetar o rato/cursor em cima do icon dropdown sem ter que clicar nele..
-Quero também que o efeito criado com o pseudo_elemento ".nav-menu__text::before" seja tambem exibido aqui no meu submenu, que aparece ou desaparece quando o cursor/rato passa por cima do link.
-Vou continuar então a utilizar a metodologia "BEM" para continuar a aproveitar a estrutura de código ja feita do nosso pseudo_elemento "::before" e adicionar ele à classe nav-submenu e ficar desta forma com as mesmas propriedades.
-*/
 .nav-submenu__link:hover .nav-submenu__text::before,
 .nav-menu__link:hover .nav-menu__text::before {
     width: 100%;
 }
 
-.nav-submenu__text {
-    /* Vamos medir agora o espaçamento do icon ate ao texto...
-    Verifico no figma um espaçamento de 12px... */
-    /* Vou colocar num novo seletor referente à classe da tag <span class="nav-submenu__text"> com a propriedade de "margin-left: 1.2rem;", na qual a caixa do texto vai se afastar da caixa do icon 12px. */
-    margin-left: 1.2rem;
+.nav-menu__item.dropdown {
+    display: none;
+}
 
-    /* 
-    !  [006]
-    Verifico que na página o meu efeito aparece por baixo da caixa de submenu e não por baixo dos textos dentro do submenu.
-    vou então colocar tambem uma posição relativa nas tags referentes ao texto <span class="nav-submenu__text">, porque o pseudo_elemento "::before" está com posição absoluta.
-    Então o pseudo elemento ".nav-menu__text::before" está com "position: absolute;" relativo a quê?
-    Ele está com uma posição absoluta, relativo ao elemento ".nav-submenu__text", logo vou colocar um "position: relative;" nesse elemento ".nav-submenu__text" ...
-    */
+.nav-menu__item.dropdown:hover .nav-submenu {
+    display: block;
+}
+
+.nav-submenu {
+    animation: showFade .5s;
+    background: #141414;
+    border: .1rem solid #393939;
+    border-radius: .5rem;
+    display: none;
+    margin: -2rem;
+    padding: 0.4rem 0;
+    position: absolute;
+}
+
+.nav-submenu.active {
+    display: block;
+}
+
+.nav-submenu__text {
+    margin-left: 1.2rem;
     position: relative;
 }
 
-/* Agora para abrir o meu submenu ao passar o cursor/rato por cima do dropdown vou aplicar o "hover" ao meu elemento dropdown na tag <li class="nav-menu__item.dropdown"> para abrir o elemento de submenu que está dentro dele, que é a tag <ul class="nav-submenu"> ...*/
-.nav-menu__item.dropdown:hover .nav-submenu {
-    /* E que vai ter um display block quando o efeito hover atuar, ou seja o efeito de abrir e fechar o submenu quando o rato/cursor passar por cima do link do icon do dropdown */
-    display: block;
-
-}
-
-/* 
-!  [009]
-Vou colocar esta "@keyframes showFade {}" criada aqui noutro local, por questão de organização de projeto.
-Na pasta "base" vou criar lá um ficheiro de nome "_animations.css" e vou guardar la esta "@keyframes showFade {}"
-*/
-
-/* Precisamos agora que o efeito no submenu mobile fique mais suave. Para isso , vamos usar um "@keyframes" e como identificador vou usar um "showFade", que é o nome do efeito que eu vou usar, não só para este elemento mas vou poder usar também para outros elementos... */
-@keyframes showFade {
-
-    /* quando esse efeito estiver com 0%, eu posso colocar uma opacidade de 0. E quando esse efeito estiver a 100%, eu posso colocar uma opacidade de 1...*/
-    0% {
-        opacity: 0;
+@media screen and (max-width: 1024px) {
+    .nav-menu {
+        margin-left: 2.5rem;
+        padding-bottom: 1rem;
     }
 
-    100% {
-        opacity: 1;
+    .nav-menu__item.mobile-hidden,
+    .nav-menu__text {
+        display: none;
     }
 
-    /* Fazendo isso, vou voltar no meu submenu <ul class="nav-submenu"> e colocar a propriedade "animation: showFade .5s;" */
+    .nav-menu__item.dropdown {
+        display: inline-block;
+    }
+
+    .nav-menu__link {
+        font-size: 1.6rem;
+        padding: 2.8rem 1.6rem;
+    }
 }
