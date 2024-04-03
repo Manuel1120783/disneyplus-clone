@@ -9,7 +9,8 @@ body {
     /** background-size: cover; */
     color: white;
     /** background-attachment: fixed; */
-    /** font-size: 2rem; */
+    /* só para testar...  */
+    font-size: 2rem;
 }
 
 .background-fixed {
