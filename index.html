@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +11,10 @@
     <title>Disney Plus</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-
 <body>
     <div class="background-fixed"></div>
     <div class="wrapper">
-        <!-- testar atributo data para js.. -->
         <header class="header" data-header>
-            <!-- <header class="header"> -->
             <div class="logo">
                 <a href="/" class="logo__link"></a>
             </div>
@@ -142,8 +138,21 @@
                 </div>
             </nav>
         </header>
+        <main>
+            <section class="banners">
+                <div class="banner-slide">
+                    <div class="banner-slide__item">
+                        <a href="/" class="banner-slide__link">
+                            <img class="banner-slide__cover" src="./assets/imgs/exemple/banner-exemple.jpeg"
+                                alt="Mandalorian" />
+                            <img class="banner-slide__title" src="./assets/imgs/exemple/banner-title-exemple.png"
+                                alt="Mandalorian-title" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
     <script type="module" src="/assets/js/main.js"></script>
 </body>
-
 </html>

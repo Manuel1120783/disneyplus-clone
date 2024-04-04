@@ -1,0 +1,242 @@
+[33mcommit ff40670fa0d5b6e0e69596e8063b0f0f5ff25b2c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdesenvolvedor[m[33m, [m[1;31morigin/desenvolvedor[m[33m)[m
+Author: Manuel_1120783 <1120783@isep.ipp.pt>
+Date:   Wed Apr 3 19:00:22 2024 +0100
+
+    add javascript ao header
+
+[33mcommit 0edbfb5710fd70a0fc68b26022810b211de1ad60[m
+Author: Manuel_1120783 <1120783@isep.ipp.pt>
+Date:   Tue Apr 2 15:37:58 2024 +0100
+
+    Colocar User-Menu Responsivo
+
+[33mcommit 9f36befb97e69cdcd23aa1970177c56db0fdfd4f[m
+Author: Manuel_1120783 <1120783@isep.ipp.pt>
+Date:   Tue Apr 2 14:36:25 2024 +0100
+
+    create user-menu deaktop
+
+[33mcommit 1be8b1d9f1c7135fff25dda065726af3ee5f4f53[m
+Author: Manuel_1120783 <1120783@isep.ipp.pt>
+Date:   Sat Mar 30 15:33:32 2024 +0000
+
+    add Responsive mobile ao menu de navegação NAV
+
+[33mcommit ae3f9adb2bce378a52c1a95ba9224f0ecf8aba59[m
+Author: Manuel_1120783 <1120783@isep.ipp.pt>
+Date:   Fri Mar 29 22:00:16 2024 +0000
+
+    add menu nav ao cabeçalho do projeto
+
+[33mcommit 80090d2290b6cfcabfa84d2c796a53dd8c5a0d7a[m
+Author: Manuel_1120783 <1120783@isep.ipp.pt>
+Date:   Fri Mar 29 12:06:05 2024 +0000
+
+    add logo in header to project
+
+[33mcommit 3e2fcc6834002a09edf0f142cf46eca8d2180985[m
+Author: Manuel_1120783 <1120783@isep.ipp.pt>
+Date:   Thu Mar 28 15:09:18 2024 +0000
+
+    add global style to project
+
+[33mcommit 73b65b94278cbe70e0819a6b39457ad2b694864f[m
+Author: Manuel_1120783 <1120783@isep.ipp.pt>
+Date:   Wed Mar 27 18:58:42 2024 +0000
+
+    add font Roboto to project
+
+[33mcommit 466262086add8d295b7a26e43808e8ecd9de98ab[m
+Author: Manuel_1120783 <1120783@isep.ipp.pt>
+Date:   Wed Mar 27 18:17:47 2024 +0000
+
+    add icons fonts to project
+
+[33mcommit 4bd2faa5504a98a9eef6dcac902b5a29d7427c22[m
+Author: Manuel_1120783 <1120783@isep.ipp.pt>
+Date:   Wed Mar 27 14:43:45 2024 +0000
+
+    add reset.css
+
+[33mcommit 23afafc77e4e6b8835544c7b36931bd0e35d3491[m
+Author: Manuel_1120783 <1120783@isep.ipp.pt>
+Date:   Wed Mar 27 13:00:34 2024 +0000
+
+    add index.html
+
+[33mcommit 43e1a07a23cc6ccb747ac15d9eb711e79420e64e[m[33m ([m[1;32mmaster[m[33m)[m
+Author: Manuel_1120783 <1120783@isep.ipp.pt>
+Date:   Wed Mar 27 12:55:44 2024 +0000
+
+    start base project
+
+[33mcommit 8afc292bb2007217fb979b24d954906e15c07dd6[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 7ba9c91 7bdb4e9
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Thu Jul 21 18:35:20 2022 -0300
+
+    Merge pull request #5 from devfabricio/develop
+    
+    Develop
+
+[33mcommit 7bdb4e9a8694692c77ac8280db3aa352b62cff85[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Fri Apr 1 17:46:13 2022 -0300
+
+    create footer
+
+[33mcommit f8cda6737548fa0d172017500de92f06f5e29719[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Thu Mar 24 14:12:45 2022 -0300
+
+    fetch content from data.json
+
+[33mcommit b8bf0be7b1e2b881164a5d489f17fbde85b67f45[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Tue Mar 22 19:12:31 2022 -0300
+
+    make final corrections on banner and collections
+
+[33mcommit decb6d49ddaf2b741bf1488b72cc99ddac7a612a[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Mon Mar 21 21:53:22 2022 -0300
+
+    fix collections section and adjust for mobile resolutions
+
+[33mcommit c5008d6efc16bd08aeeb5cf66d7bac85cea74819[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Fri Mar 18 12:21:59 2022 -0300
+
+    add behavior on carousel with javascript
+
+[33mcommit 4624fc1b2b06aa3890a8fe4ae60cafafb45437d6[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Thu Mar 17 18:15:02 2022 -0300
+
+    create collections section
+
+[33mcommit 01a76bce6841cb814cf4c7b9f06ec26b2e70162b[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Wed Mar 16 12:53:24 2022 -0300
+
+    create category-menu
+
+[33mcommit c489c7802ce56021b891e01f3a07a662687645ce[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Tue Mar 15 10:25:23 2022 -0300
+
+    add behavior on banners with javascript
+
+[33mcommit 5ebcb9e2bdb89f36eafce31c25715446a1cea354[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Tue Mar 8 20:41:26 2022 -0300
+
+    create banners section
+
+[33mcommit 37a5372cadcfdd77c28818c1d3d42728a4f49a51[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Mon Mar 7 20:11:05 2022 -0300
+
+    finish create header
+
+[33mcommit ec706dc8dcbde881d58293b14d9de93e67081364[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Mon Mar 7 10:07:24 2022 -0300
+
+    create user-menu mobile
+
+[33mcommit 14e500bcb6a1e605c810026d98261e6fa398655c[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Fri Mar 4 11:49:46 2022 -0300
+
+    create user-menu desktop
+
+[33mcommit b5d81fe7c06d554ab5f50e0a8963de65ce93b31f[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Thu Mar 3 17:54:35 2022 -0300
+
+    create nav-menu mobile
+
+[33mcommit 62bbfddf18aa4e8b399889c923e6efc171a04f38[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Thu Mar 3 17:18:42 2022 -0300
+
+    create nav-menu desktop
+
+[33mcommit 34b46117861543060de19b0abc24fe53f7cee9f4[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Wed Mar 2 23:29:47 2022 -0300
+
+    add logo in header
+
+[33mcommit 7ba9c916026e8d16bdc7182a05c9f9c91fbd7ecf[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Tue Mar 1 15:37:31 2022 -0300
+
+    doc: adjust Readme.md
+
+[33mcommit adf8b42889f4f5a61afbd55bffe37fd4b228dd48[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Tue Mar 1 15:35:46 2022 -0300
+
+    doc: create Readme.md
+
+[33mcommit 31854f129b9bfcb180ada199bc8d6daaff4f62ad[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Sun Feb 27 22:30:36 2022 -0300
+
+    add global style to project
+
+[33mcommit 33f95e660e43ca4fdfbf830c110c6bcbf684b1c2[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Sun Feb 27 21:51:36 2022 -0300
+
+    add font Roboto to project
+
+[33mcommit 3b587e3a5239a959795c4f2930331f418810685c[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Sun Feb 27 21:48:17 2022 -0300
+
+    add icons fonts to project
+
+[33mcommit 507571b9c4601060414f3591cf417c3fb0dab3e4[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Sun Feb 27 21:13:21 2022 -0300
+
+    add reset.css
+
+[33mcommit ffba0dbaab3792b31255c62716e12b2394e165e0[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Mon Feb 21 20:16:56 2022 -0300
+
+    add index.html
+
+[33mcommit f4656bc6d976b3955c3ac39a2a95dba75b42ae1a[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Sat Feb 19 17:06:39 2022 -0300
+
+    start base project
+
+[33mcommit 42ec5d8dd1f8383c0a686fdeb515e2b154129f1b[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Sat Jan 22 15:01:54 2022 -0300
+
+    chore: add other folders paths to ignore .DS_Store
+
+[33mcommit 366fd4a0779a34556701e41f2f4b802d8d46eb97[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Sat Jan 22 14:57:32 2022 -0300
+
+    chore: DS_Store deleted
+
+[33mcommit f6d9111f32fc6adfd536fa8b4d70d4fb957958c1[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Sat Jan 22 14:39:13 2022 -0300
+
+    chore: add .gitignore file
+
+[33mcommit 8ddc32f1b19db687037a3cc7972e69adfa67cabf[m
+Author: Fabrício Augusto <fabricio.mata@gmail.com>
+Date:   Sat Jan 22 14:38:02 2022 -0300
+
+    chore: create base project
