@@ -1,5 +1,6 @@
 {
     "files.exclude": {
         "**/.ttf": true
-    }
+    },
+    "liveServer.settings.port": 5502
 }

@@ -1,0 +1,31 @@
+.controls-slider {
+    position: absolute;
+    /*& como está posicionado atrás do slider, vou colocar um Z-index de 2 para ficar posicionado à frente do slider  */
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+}
+
+.controls-slider__item::before {
+    content: '\f111';
+    font-family: 'Font Awesome 6 Free';
+    font-size: 0.9rem;
+}
+
+
+.controls-slider__item {
+    background: none;
+    color: #BC93A1;
+    margin: 0.5rem;
+}
+
+
+/*& quando o pontinho estiver ativado ele muda de cor para branco  */
+.controls-slider__item.active {
+color: white;
+}
+
+
+
+
+/*& com o resto da estilização dos pontinhos eu vou trabalhar no _banners.css */

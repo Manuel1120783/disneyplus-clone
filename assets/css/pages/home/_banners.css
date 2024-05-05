@@ -1,39 +1,121 @@
 .banners {
     padding-top: 9.7rem;
+    /* 
+     & [001_3]
+            & Mas ao fazer isso acima ficamos com scroll na horizontal de sliders
+            & para acabar com esse scroll vamos modificar no html
+            & Quando o ".banner-slider" aumentou, aqui o "".banners""aumentou junto.
+            & Vamos então aplicar uma propriedade css em .banners em _banners.css:
+    */
+    overflow: hidden;
 }
 
-.banner-slide__item {
+.banner-slider__item {
+    /*& queremos que este tamanho seja respeitado depois de colocarmos os seis sliders em funcionamento, um de cada vez dentro deste tamanho  que é de 90% do vw(viewPort)  ou janela de visualização da tela  */
     width: 90vw;
-    margin: 0 auto;
+    /*& preciso colocar aqui esta propriedade para que o tamanho da propriedade acima seja respeitado:  */
+    flex-shrink: 0;
+    /*
+    & [001_1]
+  &  Mas ao fazer isso acima ficamos com scroll na horizontal  de sliders 
+  &  para acabar com esse scroll vamos modificar no html
+    */
+
+    /*
+    &[002_1]
+    & Para corrigir o problema da sombra abaixo do slider...  
+    */
+    /* margin: 0 auto; */
+    /* margin-bottom: 3rem; */
+
+    /*
+    & Aqui colocamos a distância que tem de um banner para outro ao correr no slider(horizontal)  que é de 2rem ...
+    & Como a distância vai ser uma margin tanto left como right, dividimos essa distancia por dois e colocamos na propriedade da seguinte forma: margin: TOPrem LEFT/RIGHTrem BOTTOMrem;
+    */
+    /* margin-bottom: 3rem; */
+    margin: 0 1rem 3rem;
 }
 
-.banner-slide__cover {
+.banner-slider__cover {
     width: 100%;
     border-radius: .5rem;
     display: block;
+    box-shadow: #000 0rem 3rem 4rem -2rem;
 }
 
-.banner-slide__title {
+.banner-slider__title {
     position: absolute;
     width: 100%;
     left: 0;
     top: 0;
 }
 
-.banner-slide__link {
+.banner-slider__link {
     position: relative;
     display: block;
 }
 
-.banner-slide__link:hover::before {
+.banner-slider__link:hover::before {
     border-color: rgba(255, 255, 255, 0.7);
 }
 
-.banner-slide__link::before {
+.banner-slider__link::before {
     content: "";
     border: .4rem solid rgba(255, 255, 255, 0);
     position: absolute;
     inset: 0;
     border-radius: 0.5rem;
     transition: border 0.3s;
+}
+
+
+
+/*& estilização das setas de controle do slider  */
+
+.banners .arrow-slider--left {
+    /* É absolute relativo à classe "banner-slider" */
+    position: absolute;
+    left: 3.6rem;
+    /*- Para posicionar a seta esquerda  */
+    z-index: 2;
+
+}
+
+.banners .arrow-slider--right {
+    /* É absolute relativo à classe "banner-slider" */
+    position: absolute;
+    right: 3.6rem;
+    /*- Para posicionar a seta direita  */
+    z-index: 2;
+
+}
+
+.banners {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 9.7rem;
+    /* cursor: pointer; */
+}
+
+/*- Para posicionar as setas  */
+.banner-slider {
+    position: relative;
+    display: flex;
+    /* align-items: center; */
+    /* cursor: pointer; */
+}
+
+
+
+/*& estilização dos pontinhos de controle do slider  */
+.banners .controls-slider {
+    /*
+    &[002_2]
+    & Para corrigir o problema da sombra abaixo do slider... 
+    & Vamos aqui no bottom os 3rem aplicados acima...
+    */
+    /* bottom: 1.6rem; */
+    bottom: 4.6rem;
+    right: 11.6rem;
 }

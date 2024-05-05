@@ -8,7 +8,7 @@
     }
 }
 
-@keyFrames slideDown {
+@keyframes slideDown {
     0% {
         opacity: .5%;
         height: 0;

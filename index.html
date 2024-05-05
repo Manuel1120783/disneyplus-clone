@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +12,13 @@
     <title>Disney Plus</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
+
 <body>
     <div class="background-fixed"></div>
     <div class="wrapper">
-        <header class="header" data-header>
+        <header class="header" data->
             <div class="logo">
-                <a href="/" class="logo__link"></a>
+                <a href="/" class="logo__link" aria-label="logo"></a>
             </div>
             <nav class="header__navigation">
                 <ul class="nav-menu">
@@ -57,7 +59,7 @@
                         </a>
                     </li>
                     <li class="nav-menu__item dropdown">
-                        <a href="/" class="nav-menu__link" data-open-navsubmenu>
+                        <a href="/" class="nav-menu__link" data-open-navsubmenu aria-label="dropdown">
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                             <span class="nav-menu__text"></span>
                         </a>
@@ -139,13 +141,81 @@
             </nav>
         </header>
         <main>
+            <!-- /*
+            & [001_2]
+            & Mas ao fazer isso acima ficamos com scroll na horizontal de sliders
+            & para acabar com esse scroll vamos modificar no html
+            & Quando o ".banner-slider" aumentou, aqui o "".banners""aumentou junto.
+            & Vamos então aplicar uma propriedade css em .banners em _banners.css: 
+            */ -->
             <section class="banners">
-                <div class="banner-slide">
-                    <div class="banner-slide__item">
-                        <a href="/" class="banner-slide__link">
-                            <img class="banner-slide__cover" src="./assets/imgs/exemple/banner-exemple.jpeg"
+                <!--& "seta" modificador ".arrow-slider--left" -->
+                <button class="arrow-slider arrow-slider--left" aria-label="banner-slide"></button>
+                <!--& "seta" modificador ".arrow-slider--right" -->
+                <button class="arrow-slider arrow-slider--right" aria-label="banner-slide"></button>
+                <!--& vou criar aqui os pontinhos do slider que são os botões de controle do slider  -->
+                <!--& a estilização nesta div vai ser um componente css para ser utilizado em outros lugares  -->
+                <div class="controls-slider">
+                    <button class="controls-slider__item" aria-label="pontinhos"></button>
+                    <button class="controls-slider__item" aria-label="pontinhos"></button>
+                    <button class="controls-slider__item" aria-label="pontinhos"></button>
+                    <button class="controls-slider__item" aria-label="pontinhos"></button>
+                    <button class="controls-slider__item" aria-label="pontinhos"></button>
+                    <button class="controls-slider__item" aria-label="pontinhos"></button>
+                </div>
+                <div class="banner-slider">
+
+                    <!--& vou replicar esta DIV seis vezes, uma vez para cada pontinho acima, uma vez que vou fazer passar seis sliders  -->
+                    <div class="banner-slider__item">
+                        <a href="/" class="banner-slider__link">
+                            <img class="banner-slider__cover" src="./assets/imgs/exemple/banner-exemple.jpeg"
                                 alt="Mandalorian" />
-                            <img class="banner-slide__title" src="./assets/imgs/exemple/banner-title-exemple.png"
+                            <img class="banner-slider__title" src="./assets/imgs/exemple/banner-title-exemple.png"
+                                alt="Mandalorian-title" />
+                        </a>
+                    </div>
+                    <!--& vou replicar esta DIV seis vezes, uma vez para cada pontinho acima, uma vez que vou fazer passar seis sliders  -->
+                    <div class="banner-slider__item">
+                        <a href="/" class="banner-slider__link">
+                            <img class="banner-slider__cover" src="./assets/imgs/exemple/banner-exemple.jpeg"
+                                alt="Mandalorian" />
+                            <img class="banner-slider__title" src="./assets/imgs/exemple/banner-title-exemple.png"
+                                alt="Mandalorian-title" />
+                        </a>
+                    </div>
+                    <!--& vou replicar esta DIV seis vezes, uma vez para cada pontinho acima, uma vez que vou fazer passar seis sliders  -->
+                    <div class="banner-slider__item">
+                        <a href="/" class="banner-slider__link">
+                            <img class="banner-slider__cover" src="./assets/imgs/exemple/banner-exemple.jpeg"
+                                alt="Mandalorian" />
+                            <img class="banner-slider__title" src="./assets/imgs/exemple/banner-title-exemple.png"
+                                alt="Mandalorian-title" />
+                        </a>
+                    </div>
+                    <!--& vou replicar esta DIV seis vezes, uma vez para cada pontinho acima, uma vez que vou fazer passar seis sliders  -->
+                    <div class="banner-slider__item">
+                        <a href="/" class="banner-slider__link">
+                            <img class="banner-slider__cover" src="./assets/imgs/exemple/banner-exemple.jpeg"
+                                alt="Mandalorian" />
+                            <img class="banner-slider__title" src="./assets/imgs/exemple/banner-title-exemple.png"
+                                alt="Mandalorian-title" />
+                        </a>
+                    </div>
+                    <!--& vou replicar esta DIV seis vezes, uma vez para cada pontinho acima, uma vez que vou fazer passar seis sliders  -->
+                    <div class="banner-slider__item">
+                        <a href="/" class="banner-slider__link">
+                            <img class="banner-slider__cover" src="./assets/imgs/exemple/banner-exemple.jpeg"
+                                alt="Mandalorian" />
+                            <img class="banner-slider__title" src="./assets/imgs/exemple/banner-title-exemple.png"
+                                alt="Mandalorian-title" />
+                        </a>
+                    </div>
+                    <!--& vou replicar esta DIV seis vezes, uma vez para cada pontinho acima, uma vez que vou fazer passar seis sliders  -->
+                    <div class="banner-slider__item">
+                        <a href="/" class="banner-slider__link">
+                            <img class="banner-slider__cover" src="./assets/imgs/exemple/banner-exemple.jpeg"
+                                alt="Mandalorian" />
+                            <img class="banner-slider__title" src="./assets/imgs/exemple/banner-title-exemple.png"
                                 alt="Mandalorian-title" />
                         </a>
                     </div>
@@ -155,4 +225,5 @@
     </div>
     <script type="module" src="/assets/js/main.js"></script>
 </body>
+
 </html>

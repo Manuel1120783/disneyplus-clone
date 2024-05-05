@@ -1,0 +1,19 @@
+/* vou utilizar as propriedades diretamente no elemento button, através do pseudo-elemento before */
+
+.arrow-slider {
+    font-family: 'Font Awesome 6 Free';
+    font-size: 2rem;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+.arrow-slider--left::before {
+    content: '\f053';
+}
+
+.arrow-slider--right::before {
+    content: '\f054';
+}
+
+/* Agora vou trabalhar nas posições das setas no ficheiro "_banners.css" */
